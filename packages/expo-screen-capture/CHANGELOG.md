@@ -10,6 +10,7 @@
 
 ### 💡 Others
 
+- mark `removeScreenshotListener` call as deprecated ([#42098](https://github.com/expo/expo/pull/42098) by [@vonovak](https://github.com/vonovak))
 - Remove warning about iOS screenshot limitations. ([#40115](https://github.com/expo/expo/pull/40115) by [@hryhoriiK97](https://github.com/hryhoriiK97))
 
 ## 8.0.9 - 2025-12-05
