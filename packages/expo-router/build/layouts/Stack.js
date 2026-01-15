@@ -9,5 +9,6 @@ exports.Stack = StackClient_1.default;
 const stack_utils_1 = require("./stack-utils");
 StackClient_1.default.Screen = stack_utils_1.StackScreen;
 StackClient_1.default.Header = stack_utils_1.StackHeader;
+StackClient_1.default.Toolbar = stack_utils_1.StackToolbar;
 exports.default = StackClient_1.default;
 //# sourceMappingURL=Stack.js.map

@@ -1,10 +1,20 @@
+import { Color, Stack } from 'expo-router';
 import { Text, View } from 'react-native';
 
 export default function Screen() {
   return (
-    <View style={{ flex: 1, justifyContent: 'space-between', alignItems: 'center' }}>
-      <Text>Form Sheet Modal Content - Start</Text>
-      <Text>Form Sheet Modal Content - End</Text>
-    </View>
+    <>
+      <Stack.Header style={{ backgroundColor: 'transparent' }} />
+      <Stack.Toolbar.Right>
+        <Stack.Toolbar.Button icon="checkmark" onPress={() => console.log('Checkmark pressed')} />
+      </Stack.Toolbar.Right>
+      <Stack.Toolbar.Left>
+        <Stack.Toolbar.Button icon="xmark" onPress={() => console.log('Xmark pressed')} />
+      </Stack.Toolbar.Left>
+      <View style={{ flex: 1, justifyContent: 'space-between', alignItems: 'center' }}>
+        <Text>Form Sheet Modal Content - Start</Text>
+        <Text>Form Sheet Modal Content - End</Text>
+      </View>
+    </>
   );
 }

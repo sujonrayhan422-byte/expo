@@ -15,6 +15,7 @@ import { useNextScreenId } from './preview/useNextScreenId';
 import { LinkProps } from './useLinkHooks';
 import { getFirstChildOfType } from '../utils/children';
 import { shouldLinkExternally } from '../utils/url';
+import { NativeMenuContext } from './NativeMenuContext';
 
 const isPad = Platform.OS === 'ios' && Platform.isPad;
 
@@ -135,12 +136,14 @@ export function LinkWithPreview({ children, ...rest }: LinkWithPreviewProps) {
       }}
       style={{ display: 'contents' }}
       disableForceFlatten>
-      <InternalLinkPreviewContext
-        value={{ isVisible: isCurrentPreviewOpen, href: rest.hrefForPreviewNavigation }}>
-        <BaseExpoRouterLink {...rest} children={trigger} ref={rest.ref} />
-        {preview}
-        {menuElement}
-      </InternalLinkPreviewContext>
+      <NativeMenuContext value>
+        <InternalLinkPreviewContext
+          value={{ isVisible: isCurrentPreviewOpen, href: rest.hrefForPreviewNavigation }}>
+          <BaseExpoRouterLink {...rest} children={trigger} ref={rest.ref} />
+          {preview}
+          {menuElement}
+        </InternalLinkPreviewContext>
+      </NativeMenuContext>
     </NativeLinkPreview>
   );
 }
